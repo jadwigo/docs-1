@@ -1,6 +1,6 @@
-Quick Start Guide
------------------
-
+---
+title: Quick Start Guide
+---
 
 The default Twig templates in Auth have been done with Bolt's base theme
 (currently`base-2016`) in mind. 
@@ -9,26 +9,12 @@ If you are setting up Auth for the first time, you may find it useful to
 first test on a site set up to run the current base theme, and then switch over
 when you're happy with how it is working.
 
-* [Install the extension](#install-the-extension)
-* [Update database](#update-database)
-* [Enable an authentication provider](#enable-an-authentication-provider)
-* [Configure outgoing mail](#configure-outgoing-mail)
-* [Enable registration](#enable-registration)
-* [Templates](#templates)
-  * [Authentication](#authentication)
-  * [Profiles](#profiles)
-* [Set up initial test greeting](#set-up-initial-test-greeting)
-* [Registering your first user](#registering-your-first-user)
-* [Final words](#final-words)
-
-
 #### Install the extension
  
 See the [installation page](installation.md), and ensure you've updated the site's database 
 
 Enable [debug mode](debugging.md) to get additional feedback from Auth during
 set up.
-
 
 #### Update database
 
@@ -174,4 +160,4 @@ The following links might be good next places to look:
 * [Twig Functions](twig-functions.md) provides a list of available Twig template functions
 * [Authentication Providers](authentication-providers.md) for details on adding OAuth2 providers like Facebook & Google
 * [Routes & URLs](routes-urls.md) if you'd like to understand, or customise, some of the routes used by Auth
-* [Example: Menu Entries](examples/menu.md) gives a small example of a menu for Auth specific entries 
+* [Example: Menu Entries](Examples/menu.md) gives a small example of a menu for Auth specific entries 

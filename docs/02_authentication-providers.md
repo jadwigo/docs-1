@@ -1,18 +1,6 @@
-Authentication Providers
-------------------------
-
-## Index 
-  * [Supported Providers](#supported-providers)
-    * [Configuration](#configuration)
-      * [Local (valid email address & password)](#local-valid-email-address--password)
-      * [Google](#google)
-      * [Facebook](#facebook)
-      * [GitHub](#github)
-      * [Generic OAuth2](#generic-oauth2)
-
-
-## Guide
-
+---
+title: Authentication Providers
+---
 
 ### Supported Providers
 

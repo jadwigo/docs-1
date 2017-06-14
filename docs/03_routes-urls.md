@@ -1,18 +1,6 @@
-Routes & URLs
--------------
-
-## Index
-
-  * [Base Routes](#base-routes)
-    * [Configuration](#configuration)
-  * [Authentication Routes](#authentication-routes)
-    * [Configuration](#configuration-1)
-  * [Authentication Callback Route](#authentication-callback-route)
-    * [Configuration](#configuration-2)
-  * [Auth Routes](#auth-routes)
-    * [Configuration](#configuration-3)
-
-## Guide
+---
+title: Routes & URLs
+---
 
 ### Base Routes
 

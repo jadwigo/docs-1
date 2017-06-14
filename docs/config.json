@@ -1,0 +1,20 @@
+{
+    "title": "BoltAuth",
+    "tagline": "Frontend authorization for bolt.cm",
+    "author": "Svante Richter",
+    "ignore": {
+        "files": [],
+        "folders": []
+    },
+    "format": "html",
+    "html": {
+        "theme": "daux-navy",
+        "toggle_code": false,
+        "float": true,
+        "breadcrumbs": true,
+        "breadcrumb_separator" : " > ",
+        "auto_landing": true,
+        "auto_toc": true,
+        "search": true
+    }
+}

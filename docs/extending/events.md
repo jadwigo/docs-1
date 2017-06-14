@@ -1,36 +1,6 @@
-Extending: Events
------------------
-
-
-## Index
-
-  * [Dispatched Events](#dispatched-events)
-    * [Login](#login)
-    * [Login completion event](#login-completion-event)
-    * [Auth Role Data](#auth-role-data)
-      * [Role set up](#role-set-up)
-    * [Profile](#profile)
-      * [New profile registration](#new-profile-registration)
-      * [New profile verification](#new-profile-verification)
-      * [Save to storage](#save-to-storage)
-    * [Notifications](#notifications)
-      * [Notification email pre-send.](#notification-email-pre-send)
-      * [Notification email send failure.](#notification-email-send-failure)
-      * [Password Reset](#password-reset)
-  * [Form Builder](#form-builder)
-  * [Controller Exceptions](#controller-exceptions)
-  * [Event Classes](#event-classes)
-    * [AuthLoginEvent](#authloginevent)
-    * [AuthNotificationEvent](#authnotificationevent)
-    * [AuthNotificationFailureEvent](#authnotificationfailureevent)
-    * [AuthProfileEvent](#authprofileevent)
-    * [AuthRolesEvent](#authrolesevent)
-    * [AuthLoginEvent](#authloginevent-1)
-    * [FormBuilderEvent](#formbuilderevent)
-    * [ExceptionEvent](#exceptionevent)
-
-
-## Guide
+---
+title: Events
+---
 
 ### Dispatched Events
 

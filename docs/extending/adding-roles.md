@@ -1,13 +1,6 @@
-Extending: Adding Roles
------------------------
-
-## Index
-
-  * [Extension Loader Class](#extension-loader-class)
-  * [Callback Function](#callback-function)
-
-
-## Guide
+---
+title: Adding Roles
+---
 
 Roles can be added in one of two ways, either the `roles:` key in the
 configuration file, or via events.

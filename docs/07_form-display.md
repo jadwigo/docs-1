@@ -1,14 +1,6 @@
-Form Display
-------------
-
-## Index
-
-  * [Template Overrides](#template-overrides)
-  * [Labels](#labels)
-  * [Placeholders](#placeholders)
-  * [Add-ons](#add-ons)
-
-## Guide
+---
+title: Form Display
+---
 
 The `forms:` key has 4 parameter keys:
 

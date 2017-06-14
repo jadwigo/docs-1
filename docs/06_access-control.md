@@ -1,15 +1,6 @@
-Access Control
---------------
-
-## Index
-
-  * [Roles](#roles)
-  * [Template Elements](#template-elements)
-  * [Routes](#routes)
-
-
-## Guide
-
+---
+title: Access Control
+---
 
 ### Template Elements
 
@@ -31,7 +22,7 @@ profile data can be returned via the `auth()` function, e.g.:
 ### Roles
 
 Roles can be added in one of two ways, either the `roles:` key in the
-configuration file, or [via events](extending-adding-roles.md).
+configuration file, or [via events](Extending/adding-roles.md).
 
 To check if a auth account has a role, you can use the Twig function
 `auth_has_role()`. This function takes a string as the parameter.

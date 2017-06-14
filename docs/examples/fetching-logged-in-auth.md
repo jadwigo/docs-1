@@ -1,6 +1,6 @@
-Example: Fetching logged in auth
-----------------------------------
-
+---
+title: Fetching logged in auth
+---
 
 ```php
         // Get $app

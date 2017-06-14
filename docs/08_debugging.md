@@ -1,12 +1,6 @@
-Debugging Auth
------------------
-
-## Index
-
-  * [Enabling debugging](#enabling-debugging)
-    * [Configuration](#configuration)
-
-## Guide
+---
+title: Debugging Auth
+---
 
 ### Enabling debugging
 

@@ -1,5 +1,6 @@
-Installation
-------------
+---
+title: Installation
+---
 
 Installation is fairly straightforward.
 

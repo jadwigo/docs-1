@@ -1,14 +1,6 @@
-Extending: Adding Meta Fields
------------------------------
-
-## Index
-
-  * [Extension Loader Class](#extension-loader-class)
-  * [Form Type Class](#form-type-class)
-  * [Form Entity Class](#form-entity-class)
-
-
-## Guide
+---
+title: Adding Meta Fields
+---
 
 ### Extension Loader Class
 

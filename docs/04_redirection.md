@@ -1,12 +1,6 @@
-Redirection
------------
-
-## Index
-
-  * [Setting Custom Redirects](#setting-custom-redirects)
-    * [Configuration](#configuration)
-
-## Guide
+---
+title: Redirection
+---
 
 ### Setting Custom Redirects
 

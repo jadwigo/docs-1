@@ -1,19 +1,6 @@
-Twig Functions
---------------
-
-## Index
-
-  * [Authentication](#authentication)
-    * [Renderers](#renderers)
-    * [URL Generators](#url-generators)
-  * [Profiles](#profiles)
-    * [Renderers](#renderers-1)
-    * [URL Generators](#url-generators-1)
-  * [Restricting Access](#restricting-access)
-  * [Auth Data](#auth-data)
-
-## Guide
-
+---
+title: Twig Functions
+---
 
 ### Authentication
 

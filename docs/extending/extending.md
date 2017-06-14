@@ -1,5 +1,6 @@
-Extending Auth
------------------
+---
+title: Extending Auth
+---
 
 Auth is event driven and provides a number of dispatcher that your own
 extension can listen for, and affect the behaviour of different parts of the

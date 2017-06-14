@@ -1,5 +1,6 @@
-Example: Menu Entries
----------------------
+---
+title: Menu Entries
+---
 
 Below is an example of a menu named "`auth`" that you can use as a base to
 add to your `app/config/menu.yml` file for your site.
