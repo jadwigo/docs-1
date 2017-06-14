@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>       <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>          <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>          <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->  <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <title>Form Display - BoltAuth</title>
+    <meta name="description" content="Frontend authorization for bolt.cm" />
+    <meta name="author" content="Svante Richter">
+    <meta charset="UTF-8">
+    <link rel="icon" href="themes/daux/img/favicon-navy.png" type="image/x-icon">
+    <!-- Mobile -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Font -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700&subset=latin,cyrillic-ext,cyrillic' rel='stylesheet' type='text/css'>
+    <!-- CSS -->
+    <link href='themes/daux/css/theme-navy.min.css' rel='stylesheet' type='text/css'>
+            <!-- Tipue Search -->
+        <link href="tipuesearch/tipuesearch.css" rel="stylesheet">
+    
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+<body class="with-float ">
+    <div class="Columns content">
+    <aside class="Columns__left Collapsible">
+        <button type="button" class="Button Collapsible__trigger">
+            <span class="Collapsible__trigger--bar"></span>
+            <span class="Collapsible__trigger--bar"></span>
+            <span class="Collapsible__trigger--bar"></span>
+        </button>
+
+        <a class="Brand" href="index.html">BoltAuth</a>
+
+    <div class="Search">
+        <svg class="Search__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 451 451">
+            <path d="M447.05 428l-109.6-109.6c29.4-33.8 47.2-77.9 47.2-126.1C384.65 86.2 298.35 0 192.35 0 86.25 0 .05 86.3.05 192.3s86.3 192.3 192.3 192.3c48.2 0 92.3-17.8 126.1-47.2L428.05 447c2.6 2.6 6.1 4 9.5 4s6.9-1.3 9.5-4c5.2-5.2 5.2-13.8 0-19zM26.95 192.3c0-91.2 74.2-165.3 165.3-165.3 91.2 0 165.3 74.2 165.3 165.3s-74.1 165.4-165.3 165.4c-91.1 0-165.3-74.2-165.3-165.4z"/>
+        </svg>
+        <input type="search" id="tipue_search_input" class="Search__field" placeholder="Search..." autocomplete="on"
+               results=25 autosave=text_search>
+    </div>
+
+        <div class="Collapsible__content">
+            <!-- Navigation -->
+            <ul class='Nav'><li class='Nav__item '><a href="quick-start.html">Quick Start Guide</a></li><li class='Nav__item '><a href="installation.html">Installation</a></li><li class='Nav__item '><a href="authentication-providers.html">Authentication Providers</a></li><li class='Nav__item '><a href="routes-urls.html">Routes & URLs</a></li><li class='Nav__item '><a href="redirection.html">Redirection</a></li><li class='Nav__item '><a href="twig-functions.html">Twig Functions</a></li><li class='Nav__item '><a href="access-control.html">Access Control</a></li><li class='Nav__item Nav__item--active'><a href="form-display.html">Form Display</a></li><li class='Nav__item '><a href="debugging.html">Debugging Auth</a></li><li class='Nav__item  has-children'><a href="#" class="aj-nav folder"><i class="Nav__arrow">&nbsp;</i>Examples</a><ul class='Nav'><li class='Nav__item '><a href="Examples/fetching-logged-in-auth.html">Fetching logged in auth</a></li><li class='Nav__item '><a href="Examples/menu.html">Menu Entries</a></li></ul></li><li class='Nav__item  has-children'><a href="#" class="aj-nav folder"><i class="Nav__arrow">&nbsp;</i>Extending</a><ul class='Nav'><li class='Nav__item '><a href="Extending/adding-meta-fields.html">Adding Meta Fields</a></li><li class='Nav__item '><a href="Extending/adding-roles.html">Adding Roles</a></li><li class='Nav__item '><a href="Extending/events.html">Events</a></li><li class='Nav__item '><a href="Extending/extending.html">Extending Auth</a></li></ul></li></ul>
+
+            <div class="Links">
+                
+                
+                            </div>
+        </div>
+    </aside>
+    <div class="Columns__right Columns__right--float">
+        <div class="Columns__right__content">
+            <div class="doc_content">
+                <article class="Page">
+
+    <div class="Page__header">
+        <h1><a href="form-display.html">Form Display</a></h1>
+                    </div>
+
+
+    <div class="s-content">
+        <ul class="TableOfContents">
+<li>
+<p><a href="#page_Template-Overrides">Template Overrides</a></p>
+<ul class="TableOfContents">
+<li>
+<p><a href="#page_Configuration">Configuration</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="#page_Labels">Labels</a></p>
+<ul class="TableOfContents">
+<li>
+<p><a href="#page_Configuration-2">Configuration</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="#page_Placeholders">Placeholders</a></p>
+<ul class="TableOfContents">
+<li>
+<p><a href="#page_Configuration-2">Configuration</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="#page_Add-ons">Add-ons</a></p>
+<ul class="TableOfContents">
+<li>
+<p><a href="#page_Configuration-2">Configuration</a></p>
+</li>
+</ul>
+</li>
+</ul>
+<p>The <code>forms:</code> key has 4 parameter keys:</p>
+<pre><code class="language-yaml">forms:
+    templates:
+    labels:
+    placeholders:
+    addons:
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>templates:</code></td>
+<td>Twig template paths &amp; names</td>
+</tr>
+<tr>
+<td><code>labels:</code></td>
+<td>Default labels to be displayed for certain fields (also configurable in template)</td>
+</tr>
+<tr>
+<td><code>placeholders:</code></td>
+<td>Placeholder text for certain fields</td>
+</tr>
+<tr>
+<td><code>addons:</code></td>
+<td>UI add-ons. Currently only <code>bolt/zocial-icons</code> is supported</td>
+</tr>
+</tbody>
+</table>
+<h3 id="page_Template-Overrides">Template Overrides</h3>
+<p>Twig template overrides can be specified via the <code>templates:</code> sub-key of the
+<code>forms:</code> key. These parameters allow the overriding of certain, or all,
+templates use to render Auth forms.</p>
+<h4 id="page_Configuration">Configuration</h4>
+<p>Each parameter should be a <em>relative path</em> to a Twig template file in your
+theme directory.</p>
+<p><strong>NOTE:</strong> only the templates you want/need to override should be specified.</p>
+<pre><code class="language-yaml">    templates:
+        profile:
+            parent: path/to/profile/_profile.twig
+            associate: path/to/profile/register.twig
+            edit: path/to/profile/edit.twig
+            register: path/to/profile/register.twig
+            verify: path/to/profile/verify.twig
+            view: path/to/profile/view.twig
+        authentication:
+            parent: path/to/authentication/_authentication.twig
+            associate: path/to/authentication/associate.twig
+            login: path/to/authentication/login.twig
+            logout: path/to/authentication/logout.twig
+            recovery: path/to/authentication/recovery.twig
+        error:
+            parent: path/to/error/_auth_error.twig
+            error: path/to/error/auth_error.twig
+        feedback:
+            feedback: path/to/feedback/feedback.twig
+        verification:
+            subject: path/to/verification/subject.twig
+            html: path/to/verification/html.twig
+            text: path/to/verification/text.twig
+        recovery:
+            subject: path/to/recovery/subject.twig
+            html: path/to/recovery/html.twig
+            text: path/to/recovery/text.twig
+</code></pre>
+<p>You can find the installed defaults in the Auth source directory:</p>
+<pre><code>{site root directory}/extensions/vendor/boltauth/auth/
+</code></pre>
+<h3 id="page_Labels">Labels</h3>
+<p>HTML input field label <em>defaults</em> can be specified via the <code>labels:</code> sub-key of
+the <code>forms:</code> key.</p>
+<h4 id="page_Configuration-2">Configuration</h4>
+<pre><code class="language-yaml">    labels:
+        login: Login
+        logout: Logout
+        displayname: Public Name
+        email: Email Address
+        password_first: Password
+        password_second: Repeat Password
+        profile_save: Save &amp; Continue
+</code></pre>
+<p>These labels can also be set in Twig your templates as an attribute to the
+Twig function <code>form_row()</code>, e.g. to set the label &quot;Submit me&quot; on the <code>submit</code>
+button on the form called <code>form_name</code>:</p>
+<pre><code>{{ form_row(form_name.submit, { 'label': 'Submit me' }) }}
+</code></pre>
+<h3 id="page_Placeholders">Placeholders</h3>
+<p>HTML input field placeholder values can be specified via the <code>placeholders:</code>
+sub-key of the <code>forms:</code> key.</p>
+<p>Placeholder values are a hint to the user of what can be entered in the input
+field, and must not contain carriage returns or line-feeds.</p>
+<p><strong>NOTE:</strong> Do not use the placeholder attribute instead of a <label> element, as
+their purposes are different: the <code>&lt;label&gt;</code> attribute describes the role of the
+form element; that is, it indicates what kind of information is expected, the
+placeholder attribute is a hint about the format the content should take.</p>
+<p><strong>NOTE:</strong> There are cases in which the <code>placeholder</code> attribute is never
+displayed to the user, so the form must be understandable without it.</p>
+<h4 id="page_Configuration-2">Configuration</h4>
+<pre><code class="language-yaml">    placeholders:
+        displayname: The name you would like to display publicly…
+        email: Your email address…
+        password_first: Enter your password…
+        password_second: Repeat the above password…
+</code></pre>
+<h3 id="page_Add-ons">Add-ons</h3>
+<p>Auth has very limited ability to be extended visually by, currently it
+supports the Zocial Icons extension that gives some additional CSS handling
+to form buttons.</p>
+<h4 id="page_Configuration-2">Configuration</h4>
+<pre><code class="language-yaml">    addons:
+        zocial: true
+</code></pre>
+<p>Requires the <code>bolt/zocial-icons</code> extension to be installed.</p>
+    </div>
+
+        <nav>
+        <ul class="Pager">
+            <li class=Pager--prev><a href="access-control.html">Previous</a></li>            <li class=Pager--next><a href="debugging.html">Next</a></li>        </ul>
+    </nav>
+    </article>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+    <!-- jQuery -->
+    <script src="themes/daux/js/jquery-1.11.3.min.js"></script>
+
+    <!-- hightlight.js -->
+    <script src="themes/daux/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <!-- JS -->
+    
+    <script src="themes/daux/js/daux.js"></script>
+
+            <!-- Tipue Search -->
+        <script type="text/javascript" src="tipuesearch/tipuesearch.js"></script>
+
+        <script>
+            window.onunload = function(){}; // force $(document).ready to be called on back/forward navigation in firefox
+            $(function() {
+                tipuesearch({
+                    'base_url': ''
+                });
+            });
+        </script>
+    
+</body>
+</html>

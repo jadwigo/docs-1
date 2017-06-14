@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>       <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>          <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>          <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->  <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <title>Twig Functions - BoltAuth</title>
+    <meta name="description" content="Frontend authorization for bolt.cm" />
+    <meta name="author" content="Svante Richter">
+    <meta charset="UTF-8">
+    <link rel="icon" href="themes/daux/img/favicon-navy.png" type="image/x-icon">
+    <!-- Mobile -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Font -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700&subset=latin,cyrillic-ext,cyrillic' rel='stylesheet' type='text/css'>
+    <!-- CSS -->
+    <link href='themes/daux/css/theme-navy.min.css' rel='stylesheet' type='text/css'>
+            <!-- Tipue Search -->
+        <link href="tipuesearch/tipuesearch.css" rel="stylesheet">
+    
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+<body class="with-float ">
+    <div class="Columns content">
+    <aside class="Columns__left Collapsible">
+        <button type="button" class="Button Collapsible__trigger">
+            <span class="Collapsible__trigger--bar"></span>
+            <span class="Collapsible__trigger--bar"></span>
+            <span class="Collapsible__trigger--bar"></span>
+        </button>
+
+        <a class="Brand" href="index.html">BoltAuth</a>
+
+    <div class="Search">
+        <svg class="Search__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 451 451">
+            <path d="M447.05 428l-109.6-109.6c29.4-33.8 47.2-77.9 47.2-126.1C384.65 86.2 298.35 0 192.35 0 86.25 0 .05 86.3.05 192.3s86.3 192.3 192.3 192.3c48.2 0 92.3-17.8 126.1-47.2L428.05 447c2.6 2.6 6.1 4 9.5 4s6.9-1.3 9.5-4c5.2-5.2 5.2-13.8 0-19zM26.95 192.3c0-91.2 74.2-165.3 165.3-165.3 91.2 0 165.3 74.2 165.3 165.3s-74.1 165.4-165.3 165.4c-91.1 0-165.3-74.2-165.3-165.4z"/>
+        </svg>
+        <input type="search" id="tipue_search_input" class="Search__field" placeholder="Search..." autocomplete="on"
+               results=25 autosave=text_search>
+    </div>
+
+        <div class="Collapsible__content">
+            <!-- Navigation -->
+            <ul class='Nav'><li class='Nav__item '><a href="quick-start.html">Quick Start Guide</a></li><li class='Nav__item '><a href="installation.html">Installation</a></li><li class='Nav__item '><a href="authentication-providers.html">Authentication Providers</a></li><li class='Nav__item '><a href="routes-urls.html">Routes & URLs</a></li><li class='Nav__item '><a href="redirection.html">Redirection</a></li><li class='Nav__item Nav__item--active'><a href="twig-functions.html">Twig Functions</a></li><li class='Nav__item '><a href="access-control.html">Access Control</a></li><li class='Nav__item '><a href="form-display.html">Form Display</a></li><li class='Nav__item '><a href="debugging.html">Debugging Auth</a></li><li class='Nav__item  has-children'><a href="#" class="aj-nav folder"><i class="Nav__arrow">&nbsp;</i>Examples</a><ul class='Nav'><li class='Nav__item '><a href="Examples/fetching-logged-in-auth.html">Fetching logged in auth</a></li><li class='Nav__item '><a href="Examples/menu.html">Menu Entries</a></li></ul></li><li class='Nav__item  has-children'><a href="#" class="aj-nav folder"><i class="Nav__arrow">&nbsp;</i>Extending</a><ul class='Nav'><li class='Nav__item '><a href="Extending/adding-meta-fields.html">Adding Meta Fields</a></li><li class='Nav__item '><a href="Extending/adding-roles.html">Adding Roles</a></li><li class='Nav__item '><a href="Extending/events.html">Events</a></li><li class='Nav__item '><a href="Extending/extending.html">Extending Auth</a></li></ul></li></ul>
+
+            <div class="Links">
+                
+                
+                            </div>
+        </div>
+    </aside>
+    <div class="Columns__right Columns__right--float">
+        <div class="Columns__right__content">
+            <div class="doc_content">
+                <article class="Page">
+
+    <div class="Page__header">
+        <h1><a href="twig-functions.html">Twig Functions</a></h1>
+                    </div>
+
+
+    <div class="s-content">
+        <ul class="TableOfContents">
+<li>
+<p><a href="#page_Authentication">Authentication</a></p>
+<ul class="TableOfContents">
+<li>
+<p><a href="#page_Renderers">Renderers</a></p>
+</li>
+<li>
+<p><a href="#page_URL-Generators">URL Generators</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="#page_Profiles">Profiles</a></p>
+<ul class="TableOfContents">
+<li>
+<p><a href="#page_Renderers-2">Renderers</a></p>
+</li>
+<li>
+<p><a href="#page_URL-Generators-2">URL Generators</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="#page_Restricting-Access">Restricting Access</a></p>
+</li>
+<li>
+<p><a href="#page_Auth-Data">Auth Data</a></p>
+</li>
+</ul>
+<h3 id="page_Authentication">Authentication</h3>
+<h4 id="page_Renderers">Renderers</h4>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>{{ auth_auth_login() }}</code></td>
+<td>string</td>
+<td>Render the login template</td>
+</tr>
+<tr>
+<td><code>{{ auth_auth_logout() }}</code></td>
+<td>string</td>
+<td>Render the logout template</td>
+</tr>
+<tr>
+<td><code>{{ auth_auth_switcher() }}</code></td>
+<td>string</td>
+<td>Render either the login or logout template depending on login state</td>
+</tr>
+<tr>
+<td><code>{{ auth_auth_associate() }}</code></td>
+<td>string</td>
+<td>Render the OAuth account association template</td>
+</tr>
+</tbody>
+</table>
+<h4 id="page_URL-Generators">URL Generators</h4>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>{{ auth_link_auth_login() }}</code></td>
+<td>integer</td>
+<td>Link to login</td>
+</tr>
+<tr>
+<td><code>{{ auth_link_auth_logout() }}</code></td>
+<td>integer</td>
+<td>Link to logout</td>
+</tr>
+<tr>
+<td><code>{{ auth_link_auth_reset() }}</code></td>
+<td>integer</td>
+<td>Link to password reset</td>
+</tr>
+</tbody>
+</table>
+<p>All functions default to <code>2</code> if nothing supplied.</p>
+<p>Valid parameter values:</p>
+<ul>
+<li>
+<code>0</code> — Generates an absolute URL, e.g. &quot;http://example.com/dir/file&quot;.</li>
+<li>
+<code>1</code> — Generates an absolute path, e.g. &quot;/dir/file&quot;.</li>
+<li>
+<code>2</code> — Generates a relative path based on the current request path, e.g. &quot;../parent-file&quot;.</li>
+<li>
+<code>4</code> — Generates a network path, e.g. &quot;//example.com/dir/file&quot;. Such reference reuses the current scheme but specifies the host.</li>
+</ul>
+<h3 id="page_Profiles">Profiles</h3>
+<h4 id="page_Renderers-2">Renderers</h4>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>{{ auth_profile_edit() }}</code></td>
+<td>string</td>
+<td>Render the profile edit template</td>
+</tr>
+<tr>
+<td><code>{{ auth_profile_register() }}</code></td>
+<td>string</td>
+<td>Render the profile registration template</td>
+</tr>
+</tbody>
+</table>
+<h4 id="page_URL-Generators-2">URL Generators</h4>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>{{ auth_link_profile_edit() }}</code></td>
+<td>integer</td>
+<td>Link to profile edit</td>
+</tr>
+<tr>
+<td><code>{{ auth_link_profile_register() }}</code></td>
+<td>integer</td>
+<td>Link to profile registration</td>
+</tr>
+</tbody>
+</table>
+<p>All functions default to <code>2</code> if nothing supplied.</p>
+<p>Valid parameter values:</p>
+<ul>
+<li>
+<code>0</code> — Generates an absolute URL, e.g. &quot;http://example.com/dir/file&quot;.</li>
+<li>
+<code>1</code> — Generates an absolute path, e.g. &quot;/dir/file&quot;.</li>
+<li>
+<code>2</code> — Generates a relative path based on the current request path, e.g. &quot;../parent-file&quot;.</li>
+<li>
+<code>4</code> — Generates a network path, e.g. &quot;//example.com/dir/file&quot;. Such reference reuses the current scheme but specifies the host.</li>
+</ul>
+<h3 id="page_Restricting-Access">Restricting Access</h3>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>{{ is_auth() }}</code></td>
+<td>Returns <code>true</code> if the broswer session is logged in</td>
+</tr>
+</tbody>
+</table>
+<h3 id="page_Auth-Data">Auth Data</h3>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>{{ auth() }}</code></td>
+<td></td>
+<td>Returns an entity array of the auth's account information</td>
+</tr>
+<tr>
+<td><code>{{ auth_meta() }}</code></td>
+<td></td>
+<td>Returns an entity array of the auth's meta data (if any)</td>
+</tr>
+<tr>
+<td><code>{{ auth_has_role() }}</code></td>
+<td>string</td>
+<td>Returns <code>true</code> if the logged in user has the given Auth roles</td>
+</tr>
+<tr>
+<td><code>{{ auth_providers() }}</code></td>
+<td></td>
+<td>Returns an array of providers connected to the logged in user account</td>
+</tr>
+</tbody>
+</table>
+    </div>
+
+        <nav>
+        <ul class="Pager">
+            <li class=Pager--prev><a href="redirection.html">Previous</a></li>            <li class=Pager--next><a href="access-control.html">Next</a></li>        </ul>
+    </nav>
+    </article>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+    <!-- jQuery -->
+    <script src="themes/daux/js/jquery-1.11.3.min.js"></script>
+
+    <!-- hightlight.js -->
+    <script src="themes/daux/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <!-- JS -->
+    
+    <script src="themes/daux/js/daux.js"></script>
+
+            <!-- Tipue Search -->
+        <script type="text/javascript" src="tipuesearch/tipuesearch.js"></script>
+
+        <script>
+            window.onunload = function(){}; // force $(document).ready to be called on back/forward navigation in firefox
+            $(function() {
+                tipuesearch({
+                    'base_url': ''
+                });
+            });
+        </script>
+    
+</body>
+</html>
