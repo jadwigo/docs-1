@@ -81,11 +81,12 @@ However if you wish to create your own, just set the relative path to them in
 your theme directory in Auth configuration file, e.g.:
 
 ```yaml
-templates:
-    authentication:
-        parent: auth/_authentication.twig
-    profile:
-        parent: auth/_profile.twig
+forms:
+    templates:
+        authentication:
+            parent: auth/_authentication.twig
+        profile:
+            parent: auth/_profile.twig
 ```
 
 Finally add the blocks from the sections below to your desired position your
