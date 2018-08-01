@@ -44,6 +44,7 @@ Valid parameter values:
 
 | Function                                 | Parameter | Description |
 |------------------------------------------|-----------|-------------|
+| `{{ auth_link_profile_view() }}`      | integer   | Link to profile view
 | `{{ auth_link_profile_edit() }}`      | integer   | Link to profile edit
 | `{{ auth_link_profile_register() }}`  | integer   | Link to profile registration
                                             
