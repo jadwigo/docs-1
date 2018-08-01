@@ -130,8 +130,7 @@ Add the snippet below somewhere in a template for an existing URL, and browse to
     {% if is_auth() %}
         {% set auth = auth() %}
 
-        <p>Hello, {{ auth.displayname }}. You were last seen at {{ auth.lastseen }},
-        logging on from {{ auth.lastip }}, and your email is {{ auth.email }}</p>
+        <p>Hello, {{ auth.displayname }}. You are registered with the email address {{ auth.email }}</p>
     {% else %}
         <p>Welcome visitor from the Internet!</p>
     {% endif %}
