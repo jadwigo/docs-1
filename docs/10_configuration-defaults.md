@@ -108,10 +108,3 @@ Default values for the forms are set to the following templates and labels.
 
 See [Form display](form-display.md) for more information.
 
-#### Firewalls
-
-The firewalls configuration is turned off by default:
-
-```yml
-firewalls: null
-```
